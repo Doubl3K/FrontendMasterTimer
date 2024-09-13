@@ -1,14 +1,15 @@
 import {ref, onMounted} from 'vue';
 import number from './comnponents/Number.vue';
+import hills from './components/Hills.vue';
 
 <template lang="html">
-  <div>
-    <h1 class="headLine">WE´RE LAUNCHING SOON</h1>
-    <div class="numberCounterWrapper">
-    <number number="08" label="Days"></number>
-    <number number="23" label="Hours"></number>
-    <number number="55" label="Minutes"></number>
-    <number number="41" label="Seconds"></number>
+  <div class="wrapper">
+    <div class="contentWrapper">
+      <h1 class="headLine">WE´RE WOCHENENDE SOON</h1>
+      <div class="numberCounterWrapper">
+        <number number=08 label="Days"></number>
+        <hills class="hills"></hills>
+      </div>
     </div>
   </div>
 </template>
@@ -16,13 +17,6 @@ import number from './comnponents/Number.vue';
 </script>
 <style lang="css">
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
-#__nuxt {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
 
 body {
   background-color: #1e1e2a;
@@ -30,19 +24,32 @@ body {
   color: #ffffff;
   font-family: "Red Hat Text", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 700;
   font-style: normal;
   font-size: 14px;
+  text-align: center;
 }
 
 .headLine {
-  margin-top: 20vh;
+  margin-top: 10vh;
+  margin-bottom: 20vh;
   letter-spacing: 4px;
   font-size: 21px;
 }
 .numberCounterWrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 5vh;
+}
+.hills {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+@media only screen and (max-width: 767px) {
+  #tips,
+  .boxfloat {
+    width: 100%;
+  }
 }
 </style>
