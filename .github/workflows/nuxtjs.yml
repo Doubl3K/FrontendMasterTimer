@@ -60,6 +60,8 @@ jobs:
         run: ${{ env.manager }} ${{ env.command }}
 
       - name: Static HTML export with Nuxt
+        env:
+          NUXT_APP_BASE_URL: "/FrontendMasterTimer/"
         run: ${{ env.manager }} run generate
 
       - name: Upload artifact
