@@ -21,7 +21,7 @@
         <label>Hours</label>
       </div>
         
-      <div class="leWrapper">
+      <div @click="startNewTimer" class="leWrapper">
          <div class="numberWrapper bottom">
             <div class="inner">{{ time.minutes }} </div>
         </div>
@@ -117,6 +117,10 @@ watch(() => time.value.seconds, (newVal, oldVal) => {
 onMounted(() => {
   setInterval(countDown, 1000);
 });
+
+function startNewTimer() {
+  launchDate = new Date("2025-12-13T15:00").getTime();
+}
 </script>
 
 <style lang="css">
@@ -182,6 +186,10 @@ onMounted(() => {
 
 label {
   margin-top: 300px;
+}
+
+.numberWrapper.seconds {
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 1200px) {
