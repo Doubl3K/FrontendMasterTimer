@@ -1,6 +1,6 @@
 <template lang="html">
     <div class="outerWrapper">
-        <div src="../images/pattern-hills.svg" class="svg">
+        <div class="svg">
         <div class="socialWrapper">
             <a href="https://www.facebook.com" target="_blank" class="socialIcon">
                 <img src="../images/icon-facebook.svg" alt="facebook icon" />
@@ -32,8 +32,10 @@ export default {};
 
 .svg {
   width: 100%;
-  height: 70%;
+  height: 100%;
   background-image: url("../images/pattern-hills.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,5 +50,11 @@ export default {};
 .socialIcon:hover {
   transform: scale(1.2);
   transition: transform 0.3s;
+}
+
+@media only screen and (max-width: 250px) {
+  .socialWrapper {
+    width: 80%;
+  }
 }
 </style>

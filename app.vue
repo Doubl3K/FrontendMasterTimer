@@ -33,7 +33,7 @@ body {
   margin-top: 10vh;
   margin-bottom: 20vh;
   letter-spacing: 4px;
-  font-size: 21px;
+  font-size: 48px;
 }
 .numberCounterWrapper {
   display: flex;
@@ -50,6 +50,21 @@ body {
   #tips,
   .boxfloat {
     width: 100%;
+  }
+  .headLine {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  .headLine {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .headLine {
+    font-size: 12px;
   }
 }
 </style>

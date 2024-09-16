@@ -46,6 +46,8 @@
 <script setup lang="js">
 import { ref, onMounted, watch } from 'vue';
 
+let launchDate = new Date("2024-12-13T15:00").getTime(); 
+
 const props = defineProps({
   number: Number,
   label: String
@@ -59,8 +61,7 @@ const time = ref({
 });
 
 const countDown = () => {
-  const launchDate = new Date("2024-12-13T15:00").getTime();
-  const now = new Date().getTime();
+  let now = new Date().getTime();
   const distance = launchDate - now;
 
   time.value.days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -87,7 +88,7 @@ function flipMinutes() {
   document.querySelector('.minutes').classList.add('animation');
   setTimeout(() => {
   document.querySelector('.minutes').classList.remove('animation');
-  }, 1000);
+  }, 900);
 }
 
 function flipSeconds() {
@@ -130,7 +131,6 @@ onMounted(() => {
   font-size: 2rem;
   color: hsl(345, 95%, 68%);
   position: absolute;
-  animation: flipNumber 5s linear;
 }
 
 .numberWrapperWrapper {
@@ -164,6 +164,7 @@ onMounted(() => {
 .inner {
   transform-style: preserve-3d;
   font-weight: 700;
+  font-size: 3rem;
 }
 
 .top {
@@ -180,16 +181,58 @@ onMounted(() => {
 }
 
 label {
-  margin-top: 150px;
+  margin-top: 300px;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 1200px) {
   .numberWrapper {
     width: 8vh;
     height: 8vh;
   }
   .numberWrapperWrapper {
     width: 80%;
+  }
+
+  label {
+    margin-top: 150px;
+  }
+
+  .inner {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .numberWrapper {
+    width: 2vh;
+    height: 2vh;
+  }
+  .numberWrapperWrapper {
+    width: 100%;
+  }
+
+  label {
+    margin-top: 100px;
+  }
+
+  .inner {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 250px) {
+  .numberWrapperWrapper {
+    width: 80%;
+    height: 30vh;
+    flex-direction: column;
+  }
+
+  .inner {
+    font-size: 2rem;
+  }
+
+  label {
+    margin-top: 30px;
   }
 }
 
@@ -201,21 +244,6 @@ label {
   100% {
     transform: perspective(500px) rotateX(180deg);
     opacity: 0.2;
-  }
-}
-
-@keyframes flipNumber {
-  0% {
-    transform: rotateY(0deg);
-  }
-  50% {
-    trandform: rotateY(0deg);
-  }
-  51% {
-    transform: rotateY(180deg);
-  }
-  100% {
-    transform: rotateY(0deg);
   }
 }
 </style>
