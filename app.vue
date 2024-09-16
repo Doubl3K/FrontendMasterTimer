@@ -30,15 +30,15 @@ body {
 }
 
 .headLine {
-  margin-top: 10vh;
-  margin-bottom: 20vh;
+  margin-top: 15vh;
+  margin-bottom: 10vh;
   letter-spacing: 4px;
-  font-size: 48px;
+  font-size: 1.5rem;
+  letter-spacing: 0.5rem;
 }
 .numberCounterWrapper {
   display: flex;
   justify-content: center;
-  margin-top: 5vh;
 }
 .hills {
   position: fixed;
@@ -47,10 +47,6 @@ body {
 }
 
 @media only screen and (max-width: 767px) {
-  #tips,
-  .boxfloat {
-    width: 100%;
-  }
   .headLine {
     font-size: 24px;
   }
