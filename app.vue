@@ -1,6 +1,6 @@
 import {ref, onMounted} from 'vue';
-import number from './comnponents/Number.vue';
-import hills from './components/Hills.vue';
+import number from './FrontendMasterTimer/comnponents/Number.vue';
+import hills from './FrontendMasterTimer/components/Hills.vue';
 
 <template lang="html">
   <div class="wrapper">
