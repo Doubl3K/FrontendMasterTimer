@@ -59,7 +59,7 @@ const time = ref({
 });
 
 const countDown = () => {
-  const launchDate = new Date("2024-09-13T15:00").getTime();
+  const launchDate = new Date("2024-12-13T15:00").getTime();
   const now = new Date().getTime();
   const distance = launchDate - now;
 
@@ -94,7 +94,7 @@ function flipSeconds() {
   document.querySelector('.seconds').classList.add('animation');
   setTimeout(() => {
   document.querySelector('.seconds').classList.remove('animation');
-  }, 700);
+  }, 900);
 }
 
 watch(() => time.value.days, (newVal, oldVal) => {
@@ -130,6 +130,7 @@ onMounted(() => {
   font-size: 2rem;
   color: hsl(345, 95%, 68%);
   position: absolute;
+  animation: flipNumber 5s linear;
 }
 
 .numberWrapperWrapper {
@@ -152,7 +153,7 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  perspective: 900px;
+  perspective: 600px;
 }
 
 .leWrapper > label {
@@ -175,7 +176,7 @@ onMounted(() => {
 }
 
 .animation {
-  animation: flip3D 1s infinite;
+  animation: flip3D 1s;
 }
 
 label {
@@ -194,12 +195,27 @@ label {
 
 @keyframes flip3D {
   0% {
-    transform: rotateX(0deg);
-    opacity: 100;
+    taransform: perspective(400px) rotateX(0deg);
+    opacity: 1;
   }
   100% {
-    transform: rotateX(180deg);
-    opacity: 0%;
+    transform: perspective(500px) rotateX(180deg);
+    opacity: 0.2;
+  }
+}
+
+@keyframes flipNumber {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    trandform: rotateY(0deg);
+  }
+  51% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(0deg);
   }
 }
 </style>
