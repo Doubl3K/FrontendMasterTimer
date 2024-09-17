@@ -63,4 +63,10 @@ body {
     font-size: 12px;
   }
 }
+
+@media only screen and (max-width: 200px) {
+  .headLine {
+    font-size: 8px;
+  }
+}
 </style>
