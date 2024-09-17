@@ -47,17 +47,19 @@
       </div>
 
       <div class="leWrapper">
-         <div class="numberWrapper bottom">
-            <div class="inner">{{ time.seconds }} </div>
-        </div>
-        <div class= "lineDividerWrapper">
-          <div class="thePoint left"></div>
-          <div class= "lineDivider"></div>
-          <div class="thePoint right"></div>
-        </div>
-        <div class= "numberWrapper top seconds">
-            <div class="inner">{{ time.seconds }} </div>
-        </div>
+         
+           <div class="numberWrapper bottom">
+              <div class="inner">{{ time.seconds }} </div>
+                   </div>
+                   <div class= "lineDividerWrapper">
+            <div class="thePoint left"></div>
+            <div class= "lineDivider"></div>
+            <div class="thePoint right"></div>
+                   </div>
+                   <div class= "numberWrapper top seconds">
+              <div class="inner">{{ time.seconds }} </div>
+                   </div>
+        
         <label>SECONDS</label>
       </div>
     </div>
@@ -225,7 +227,7 @@ label {
   top: calc(10vh - 7.5px);
   z-index: 10;
   height: 15px;
-  width: 20vh;
+  width: 100%;
   opacity: 0.3;
 }
 
@@ -250,10 +252,15 @@ label {
   border-radius: 0 100% 100% 0;
 }
 
-@media only screen and (max-width: 1200px) {
+.wrapMe {
+  height: 100%;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1000px) {
   .numberWrapper {
-    width: 8vh;
-    height: 8vh;
+    width: 10vh;
+    height: 10vh;
   }
   .numberWrapperWrapper {
     width: 80%;
@@ -266,19 +273,37 @@ label {
   .inner {
     font-size: 2rem;
   }
+  .lineDividerWrapper {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .numberWrapperWrapper {
+    width: 100%;
+  }
+
+  label {
+    font-size: 0.7rem !important;
+    letter-spacing: 0.3rem !important;
+  }
+
+  body {
+    overflow: hidden;
+  }
 }
 
 @media only screen and (max-width: 400px) {
   .numberWrapper {
-    width: 2vh;
-    height: 2vh;
+    width: 7vh;
+    height: 7vh;
   }
   .numberWrapperWrapper {
     width: 100%;
   }
 
   label {
-    margin-top: 100px;
+    letter-spacing: 0.1rem !important;
   }
 
   .inner {
@@ -286,19 +311,28 @@ label {
   }
 }
 
-@media only screen and (max-width: 250px) {
+@media only screen and (max-width: 300px) {
   .numberWrapperWrapper {
     width: 80%;
     height: 30vh;
     flex-direction: column;
   }
 
+  .numberWrapper {
+    width: 5vh;
+    height: 5vh;
+  }
+
   .inner {
-    font-size: 10rem;
+    font-size: 2rem;
   }
 
   label {
-    margin-top: 30px;
+    margin-top: 60px;
+    margin-bottom: 10px;
+  }
+  body {
+    overflow: hidden;
   }
 }
 

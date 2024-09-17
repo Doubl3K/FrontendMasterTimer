@@ -54,6 +54,12 @@ export default {};
   filter: hue-rotate(70deg);
 }
 
+@media only screen and (max-width: 1200px) {
+  .socialWrapper {
+    width: 30%;
+  }
+}
+
 @media only screen and (max-width: 250px) {
   .socialWrapper {
     width: 80%;
