@@ -1,5 +1,5 @@
 <template lang="html">
-    <div class="outerWrapper">
+    <div class="outerWrapper test">
         <div class="svg">
         <div class="socialWrapper">
             <a href="https://www.facebook.com" target="_blank" class="socialIcon">
